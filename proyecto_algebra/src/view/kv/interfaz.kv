@@ -1,0 +1,31 @@
+<MiInterfaz>
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+
+        # Título
+        Label:
+            text: "Productos Más Vendidos"
+            font_size: 24
+            size_hint: 1, 0.1
+
+        # ScrollView para los productos
+        ScrollView:
+            size_hint: 1, 0.8
+            GridLayout:
+                cols: 2
+                size_hint_y: None
+                height: self.minimum_height
+                # Títulos de las columnas
+                Label:
+                    text: "Producto"
+                    bold: True
+                Label:
+                    text: "Cantidad"
+                    bold: True
+
+                # Aquí es donde se agregarán dinámicamente los productos
+
+

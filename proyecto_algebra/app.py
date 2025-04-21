@@ -1,8 +1,5 @@
-from src.view.interfaz import MiInterfaz
+from src.view.interfaz import MyApp
 
-class App(App):
-    def build(self):
-        return MiInterfaz()
+if __name__ == "__main__":
+    MyApp().run()
 
-if __name__ == '__main__':
-    App().run()
