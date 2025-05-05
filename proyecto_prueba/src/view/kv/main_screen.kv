@@ -1,0 +1,85 @@
+<MainScreen>:
+    GridLayout:
+        cols: 1
+        spacing: 20
+        padding: 50
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.1, 0.1, 1  # Fondo oscuro
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: "Menú Principal"
+            font_size: 24
+            size_hint: 1, 0.1
+            halign: "center"
+            valign: "middle"
+            color: 1, 1, 1, 1  # Texto blanco
+            bold: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            padding: [100, 150, 100, 150]
+
+            Button:
+                text: "Mostrar Inventario"
+                background_normal: ''
+                background_down: ''
+                background_color: 0.26, 0.44, 0.84, 1  # Azul
+                color: 1, 1, 1, 1  # Texto blanco
+                font_size: 18
+                on_press: root.abrir_pantalla_mostrar_inventario()
+                size_hint: 1, None
+                height: 50
+                border: [12, 12, 12, 12]  # Bordes redondeados
+
+            Button:
+                text: "Ventas Mensuales"
+                background_normal: ''
+                background_down: ''
+                background_color: 0.26, 0.44, 0.84, 1  # Azul
+                color: 1, 1, 1, 1  # Texto blanco
+                font_size: 18
+                on_press: root.abrir_pantalla_mostrar_ventas()
+                size_hint: 1, None
+                height: 50
+                border: [12, 12, 12, 12]
+
+            Button:
+                text: "Comparaciones Gauss Jordan"
+                background_normal: ''
+                background_down: ''
+                background_color: 0.26, 0.44, 0.84, 1  # Azul
+                color: 1, 1, 1, 1  # Texto blanco
+                font_size: 18
+                on_press: root.abrir_pantalla_mostrar_comparacion_gauss()
+                size_hint: 1, None
+                height: 50
+                border: [12, 12, 12, 12]
+
+            Button:
+                text: "Proyecciones"
+                background_normal: ''
+                background_down: ''
+                background_color: 0.26, 0.44, 0.84, 1  # Azul
+                color: 1, 1, 1, 1  # Texto blanco
+                font_size: 18
+                on_press: root.abrir_pantalla_mostrar_comparacion_minimos_cuadrados()
+                size_hint: 1, None
+                height: 50
+                border: [12, 12, 12, 12]
+
+            Button:
+                text: "Cerrar"
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 0.44, 0.26, 1  # Naranja
+                color: 1, 1, 1, 1  # Texto blanco
+                font_size: 18
+                on_press: root.salir()
+                size_hint: 1, None
+                height: 50
+                border: [12, 12, 12, 12]

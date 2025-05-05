@@ -1,0 +1,69 @@
+<MostrarComparacionGaussJordanScreen>:
+    GridLayout:
+        cols: 1
+        spacing: 20
+        padding: 40
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.1, 0.1, 1  # Fondo oscuro
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: [50, 100, 50, 100]
+        spacing: 20
+
+        ScrollView:
+            size_hint_y: 0.4
+            do_scroll_x: True
+            do_scroll_y: True
+            GridLayout:
+                id: tabla_gj
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+        Label:
+            id: resultado_label
+            text: ""
+            size_hint_y: None
+            height: self.texture_size[1] + 20
+            text_size: self.width, None
+            halign: "left"
+            valign: "middle"
+            font_size: 16
+
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: [100, 100, 100, 100]
+        spacing: 20
+        Label:
+            id: resultado_label
+            text: ""
+            size_hint_y: None
+            height: self.texture_size[1] + 20
+            text_size: self.width, None
+            halign: "left"
+            valign: "middle"
+            font_size: 16
+
+
+        Button:
+            text: "Volver"
+            background_normal: ''
+            background_down: ''
+            background_color: 1, 0.44, 0.26, 1  # Naranja
+            color: 1, 1, 1, 1  # Texto blanco
+            font_size: 18
+            size_hint_y: None
+            height: 50
+            on_press: root.volver_al_menu()
+
+
+
+
+
+
