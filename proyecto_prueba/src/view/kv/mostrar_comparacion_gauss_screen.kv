@@ -1,8 +1,8 @@
 <MostrarComparacionGaussJordanScreen>:
-    GridLayout:
-        cols: 1
-        spacing: 20
-        padding: 40
+    BoxLayout:
+        orientation: 'vertical'
+        padding: dp(20)
+        spacing: dp(15)
         canvas.before:
             Color:
                 rgba: 0.1, 0.1, 0.1, 1  # Fondo oscuro
@@ -10,58 +10,75 @@
                 size: self.size
                 pos: self.pos
 
-    BoxLayout:
-        orientation: "vertical"
-        padding: [50, 100, 50, 100]
-        spacing: 20
+        Label:
+            text: '[b]COMPARACIÓN GAUSS-JORDAN[/b]'
+            markup: True
+            font_size: dp(24)
+            size_hint_y: None
+            height: dp(50)
+            color: 1, 1, 1, 1  # Texto blanco
+            halign: 'center'
 
         ScrollView:
-            size_hint_y: 0.4
-            do_scroll_x: True
-            do_scroll_y: True
+            size_hint_y: 0.25
+            bar_width: dp(10)
+            bar_color: 0.5, 0.5, 0.7, 1
             GridLayout:
                 id: tabla_gj
                 cols: 1
                 size_hint_y: None
                 height: self.minimum_height
+                spacing: dp(5)
+                padding: dp(10)
 
-        Label:
-            id: resultado_label
-            text: ""
-            size_hint_y: None
-            height: self.texture_size[1] + 20
-            text_size: self.width, None
-            halign: "left"
-            valign: "middle"
-            font_size: 16
-
-
-    BoxLayout:
-        orientation: "vertical"
-        padding: [100, 100, 100, 100]
-        spacing: 20
-        Label:
-            id: resultado_label
-            text: ""
-            size_hint_y: None
-            height: self.texture_size[1] + 20
-            text_size: self.width, None
-            halign: "left"
-            valign: "middle"
-            font_size: 16
-
+        TabbedPanel:
+            size_hint_y: 0.6
+            do_default_tab: False
+            tab_width: root.width/2
+            
+            TabbedPanelItem:
+                text: 'Resultados'
+                ScrollView:
+                    Label:
+                        id: resultado_label
+                        text: root.resultado_text
+                        markup: True
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        text_size: self.width, None
+                        halign: 'left'
+                        valign: 'top'
+                        padding: dp(10), dp(10)
+                        font_size: dp(16)
+                        color: 1, 1, 1, 1  # Texto blanco
+            
+            TabbedPanelItem:
+                text: 'Procedimiento'
+                ScrollView:
+                    Label:
+                        id: procedimiento_label
+                        text: root.procedimiento_text
+                        markup: True
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        text_size: self.width, None
+                        halign: 'left'
+                        valign: 'top'
+                        padding: dp(10), dp(10)
+                        font_size: dp(14)
+                        color: 1, 1, 1, 1  # Texto blanco
 
         Button:
-            text: "Volver"
+            text: 'Volver'
+            size_hint_y: None
+            height: dp(50)
             background_normal: ''
             background_down: ''
             background_color: 1, 0.44, 0.26, 1  # Naranja
             color: 1, 1, 1, 1  # Texto blanco
-            font_size: 18
-            size_hint_y: None
-            height: 50
+            font_size: 16
+            bold: True
             on_press: root.volver_al_menu()
-
 
 
 
